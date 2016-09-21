@@ -1,0 +1,19 @@
+{
+  "name": "francetvpub/poc-icicle",
+  "description": "icicle POC",
+  "license": "BSD-3-Clause",
+  "require": {
+    "php": ">=7.0",
+    "icicleio/icicle": "~0.9.6"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ApplicationTest\\": "module/Application/tests/ApplicationTest/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "./poc.php"
+    ]
+  }
+}
