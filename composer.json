@@ -4,6 +4,7 @@
   "license": "BSD-3-Clause",
   "require": {
     "php": ">=7.0",
+    "ext-pcntl": "*",
     "icicleio/icicle": "~0.9.6"
   },
   "autoload-dev": {
