@@ -3,8 +3,10 @@
   "description": "icicle POC",
   "license": "BSD-3-Clause",
   "require": {
-    "php": ">=7.0",
+    "php": ">=5.5",
     "ext-pcntl": "*",
+    "zendframework/zendframework": "2.5.2",
+    "zfcampus/zf-development-mode": "^3.0",
     "icicleio/icicle": "~0.9.6"
   },
   "autoload-dev": {
@@ -13,11 +15,16 @@
     }
   },
   "scripts": {
+    "development-disable": "zf-development-mode disable",
+    "development-enable": "zf-development-mode enable",
+    "development-status": "zf-development-mode status",
     "post-update-cmd": [
       "@post-install-cmd"
     ],
     "post-install-cmd": [
-      "./poc.php"
+      "@development-enable",
+      "chmod -R 775 data/cache",
+      "php public/index.php poc parallel"
     ]
   }
 }
